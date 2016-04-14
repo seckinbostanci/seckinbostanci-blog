@@ -6,6 +6,17 @@
  */
 
 module.exports = {
-	
+
+    new:function (req, res) {
+        var userData = req.allParams();
+        UserManager.createUser(userData,function usermanegerCreateUserCallback(createUserError,createUserRecord) {
+            if (createUserError){
+                res.send(createUserError);
+            }else {
+                res.send(createUserRecord);
+            }
+        });
+    }
+
 };
 
