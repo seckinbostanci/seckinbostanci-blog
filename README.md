@@ -7,6 +7,7 @@ Neler kullandım/kullanacağım :
   - sails-mysql modülü
   - sailsjs-cacheman
   - redis-server
+
 ### Version
 0.0.1
 
