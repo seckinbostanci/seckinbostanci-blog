@@ -6,28 +6,65 @@
  */
 module.exports = {
 
-  attributes: {
+    connections: ['mongoConnection', 'elasticConnection'],
 
-    name: {
-      type: 'string'
+    elasticSearch: {
+        mappings: {
+            person: {
+                properties: {
+                    name: {
+                        type: 'string'
+                    },
+
+                    surname: {
+                        type: 'string'
+                    },
+
+                    password: {
+                        type: 'string'
+                    },
+
+                    email: {
+                        type: 'string'
+                    }
+                }
+            }
+        }
     },
 
-    surname: {
-      type: 'string'
+    attributes: {
+
+        name: {
+            type: 'string'
+        },
+
+        surname: {
+            type: 'string'
+        },
+
+        password: {
+            type: 'string',
+            required: true
+        },
+
+        email: {
+            type: 'email',
+            unique: true,
+            required: true,
+            email: true
+        }
+
     },
 
-    password: {
-      type: 'string',
-      required: true
-    },
-
-    email: {
-      type: 'email',
-      unique: true,
-      required: true
-    }
-
-  }
+    // afterCreate: function (value, callback) {
+    //     this.createIndex(value, callback)
+    // },
+    // afterUpdate: function (value, callback) {
+    //     this.updateIndex(value.id, value, callback)
+    // },
+    // afterDestroy: function (value, callback) {
+    //     this.destroyIndex(value.id, callback)
+    // }
 
 };
 

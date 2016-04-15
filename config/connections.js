@@ -47,6 +47,16 @@ module.exports.connections = {
     password: 'root', //optional
     database: 'myblog' //optional
   },
+  elasticConnection: {
+    adapter: 'sails-elastic',
+    hosts: ['http://127.0.0.1:9200'],
+    keepAlive: false,
+    sniffOnStart: true,
+    maxRetries: 10,
+    deadTimeout: 40000,
+    sniffOnConnectionFault: true,
+    apiVersion: '2.0'
+},
 
   /***************************************************************************
   *                                                                          *
