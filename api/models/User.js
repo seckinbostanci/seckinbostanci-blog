@@ -43,15 +43,11 @@ module.exports = {
         },
 
         password: {
-            type: 'string',
-            required: true
+            type: 'string'
         },
 
         email: {
-            type: 'email',
-            unique: true,
-            required: true,
-            email: true
+            type: 'string'
         }
 
     },
