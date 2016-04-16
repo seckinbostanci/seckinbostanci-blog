@@ -1,1 +1,188 @@
-<h1>yeni kullanıcı</h1>
+<style>
+    div, body{
+        margin: 0;
+        padding: 0;
+
+    }
+    .wrapper {
+        height: 100%;
+        width: 100%;
+    }
+
+    .message {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        width: 100%;
+        height: 20%;
+        bottom: 0;
+        display: block;
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        padding: 0.5em;
+    }
+
+    .vertical-center {
+        display: flex;
+        align-items: center;
+        min-height: 100vh;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .demo-smile {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-align-items: center;
+        align-items: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+        min-width: 250px;
+        min-height: 250px;
+    }
+    .demo-smile__label {
+        margin-left: 20px;
+        font-size: 30px;
+        font-family: arial;
+        color: #fff;
+    }
+    .sad-smile {
+        width: 250px;
+        height: 250px;
+        position: relative;
+        border-radius: 125px;
+        display: block;
+        background-color: #ffe632;
+        background: linear-gradient(to bottom, #efee5f, #ecc837);
+        box-shadow: inset 0px -14px 14px rgba(0, 0, 0, 0.3), 0px 2px 20px rgba(0, 0, 0, 0.6);
+    }
+    .sad-smile .sad-smile_eyes {
+        position: absolute;
+        top: 13.3%;
+        background-color: #fff;
+        border: 8px solid #000;
+        border-radius: 100px 100px 0 0;
+        height: 20%;
+        width: 20%;
+    }
+    .sad-smile .sad-smile_eyes:before,
+    .sad-smile .sad-smile_eyes:after {
+        content: "";
+        display: block;
+        position: absolute;
+        background-color: #000;
+    }
+    .sad-smile .sad-smile_eyes:after {
+        left: 0;
+        bottom: 0;
+        -webkit-transform: translateZ(0) translate(0, 0);
+        transform: translateZ(0) translate(0, 0);
+        background-color: #000;
+        width: 41.7%;
+        height: 41.7%;
+        border-radius: 50%;
+    }
+    .sad-smile .sad-smile_eyes:before {
+        border-radius: 100% 100% 0 0;
+        height: 13.3%;
+        width: 66.7%;
+        right: 16.7%;
+        top: -33.3%;
+    }
+    .sad-smile .sad-smile_lefteye {
+        left: 20%;
+    }
+    .sad-smile .sad-smile_righteye {
+        right: 20%;
+    }
+    .sad-smile .sad-smile_righteye .tear {
+        -webkit-animation-delay: 1s;
+        animation-delay: 1s;
+    }
+    .sad-smile .sad-smile_mouth {
+        width: 66.7%;
+        height: 30%;
+        border-bottom: 7px solid #222;
+        border-right: 7px solid transparent;
+        border-left: 7px solid transparent;
+        border-radius: 50%;
+        box-sizing: border-box;
+        overflow: hidden;
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        z-index: 2;
+        -webkit-transform: rotateX(180deg) translate(-50%, 0);
+        transform: rotateX(180deg) translate(-50%, 0);
+    }
+    .sad-smile .tear {
+        position: absolute;
+        top: 50%;
+        left: 0%;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        border-right: 8px solid transparent;
+        border-left: 8px solid transparent;
+        border-bottom: 24px solid #1ca5e2;
+        border-radius: 50%;
+        -webkit-transform: translateZ(0) translate(0, 0) scale(0);
+        transform: translateZ(0) translate(0, 0) scale(0);
+        -webkit-animation: animation-tear 2.5s cubic-bezier(0.63, 0.49, 1, -0.15) 0.2s infinite;
+        animation: animation-tear 2.5s cubic-bezier(0.63, 0.49, 1, -0.15) 0.2s infinite;
+    }
+    @keyframes animation-tear {
+        5% {
+            opacity: 1;
+        }
+        10% {
+            -webkit-transform: translateZ(0) translate(0, 25px) scale(1);
+            transform: translateZ(0) translate(0, 25px) scale(1);
+        }
+        100% {
+            -webkit-transform: translateZ(0) translate(0, 125px) scale(1);
+            transform: translateZ(0) translate(0, 125px) scale(1);
+        }
+    }
+    @-webkit-keyframes animation-tear {
+        5% {
+            opacity: 1;
+        }
+        10% {
+            -webkit-transform: translateZ(0) translate(0, 25px) scale(1);
+            transform: translateZ(0) translate(0, 25px) scale(1);
+        }
+        100% {
+            -webkit-transform: translateZ(0) translate(0, 125px) scale(1);
+            transform: translateZ(0) translate(0, 125px) scale(1);
+        }
+    }
+
+</style>
+<div class="wrapper">
+
+    <div class="container-fluid">
+        <div class="row vertical-center">
+            <div class="demo-smile">
+                <div class="sad-smile">
+                    <div class="sad-smile_eyes sad-smile_lefteye"><div class="tear"></div></div>
+                    <div class="sad-smile_eyes sad-smile_righteye"><div class="tear"></div></div>
+                    <div class="sad-smile_mouth"></div>
+                </div>
+                <span class="demo-smile__label">Üzgünüm kayıtlar kapalı</span>
+            </div>
+        </div>
+    </div>
+    <div class="message">
+        <h1>Yeni kullanıcı kayıtları hakkında !</h1>
+        <p>
+            Referanslı veya referanssız kayıtlar dondurulmuştur. <br/>
+            Yalnızca eksi üyelerimize hizmet vermekteyiz.
+        </p>
+    </div>
+</div>

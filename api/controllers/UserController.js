@@ -8,10 +8,13 @@
 module.exports = {
 
     index: function(req, res){
-        res.send("ddd");
+        res.redirect('user/login');
     },
 
     'new':function newUserView(req, res) {
+        res.view();
+    },
+    'login':function newUserView(req, res) {
         res.view();
     }
 

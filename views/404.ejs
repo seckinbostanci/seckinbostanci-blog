@@ -32,37 +32,295 @@
 
 
 -->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600' rel='stylesheet' type='text/css'>
-    <style>
-      /* Styles included inline since you'll probably be deleting this page anyway */
-      html,body{text-align:left;font-size:1em}html,body,img,form,textarea,input,fieldset,div,p,div,ul,li,ol,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,code{margin:0;padding:0}ul,li{list-style:none}img{display:block}a img{border:0}a{text-decoration:none;font-weight:normal;font-family:inherit}*:active,*:focus{outline:0;-moz-outline-style:none}h1,h2,h3,h4,h5,h6,h7{font-weight:normal;font-size:1em}.clearfix:after{clear:both;content:".";display:block;font-size:0;height:0;line-height:0;visibility:hidden}.fourohfour .ocean{background:url('http://sailsjs.com/images/waves.png') #0c8da0 no-repeat center 282px;height:315px}.fourohfour .ocean img{margin-right:auto;margin-left:auto}.fourohfour .waves{display:block;padding-top:25px;margin-right:auto;margin-left:auto}.fourohfour .main{display:block;margin-top:90px}.fourohfour .logo{width:150px;margin-top:3.5em;margin-left:auto;margin-right:auto}.fourohfour .fishy{display:block;padding-top:27px}.fourohfour .help{padding-top:2em}.fourohfour h1{font-family:"Open Sans","Myriad Pro",Arial,sans-serif;font-weight:bold;font-size:1.7em;color:#001c20;text-align:center}.fourohfour h2{font-family:"Open Sans","Myriad Pro",Arial,sans-serif;font-weight:300;font-size:1.5em;color:#001c20;text-align:center}.fourohfour p{font-family:"Open Sans","Myriad Pro",Arial,sans-serif;font-size:1.25em;color:#001c20;text-align:center}.fourohfour a{color:#118798}.fourohfour a:hover{color:#b1eef7}
-    </style>
+<style>
+    body, html {
+        background: linear-gradient(to bottom, #0F95DF, #0B76BA);
+        height: 100%;
+        padding: 0;
+        margin: 0;
+    }
 
-    <div class="fourohfour">
-      <div class="ocean">
-        <img class="fishy" src="http://sailsjs.org/images/fishy4.png">
-      </div>
+    .container {
+        width: 500px;
+        height: 500px;
+        position: absolute;
+        margin-top: 10%;
+        margin-left: calc(50% - 250px);
+    }
 
-      <div class="main">
-        <h1>
-          Something's fishy here.
-        </h1>
-        <h2>
-          <% if (typeof data!== 'undefined') { %>
-          <%= data %>
-          <% } else { %>
-          The page you were trying to reach doesn't exist.
-          <% } %>
-        </h2>
-        <p class="help">
-          <a href="http://en.wikipedia.org/wiki/HTTP_404">Why</a> might this be happening?
-        </p>
-      </div>
+    .bg-circle:nth-child(2) {
+        width: 333.33333px;
+        height: 333.33333px;
+        background: white;
+        opacity: 0.05;
+        position: absolute;
+        border-radius: 50%;
+        margin-left: calc(50% - 166.66667px);
+        margin-top: calc(50% - 166.66667px);
+        animation: bg-an-2 1.8s ease-in infinite;
+        animation-delay: 0.1s;
+    }
 
-      <div class="logo">
-        <a href="http://sailsjs.org">
-          <img src="http://sailsjs.org/images/logo.png">
-        </a>
-      </div>
+    @keyframes bg-an-2 {
+        0% {
+            width: 333.33333px;
+            height: 333.33333px;
+            margin-left: calc(50% - 166.66667px);
+            margin-top: calc(50% - 166.66667px);
+        }
+        78% {
+            width: 0px;
+            height: 0px;
+            margin-left: calc(50%);
+            margin-top: calc(50%);
+        }
+        100% {
+            width: 333.33333px;
+            height: 333.33333px;
+            margin-left: calc(50% - 166.66667px);
+            margin-top: calc(50% - 166.66667px);
+        }
+    }
+
+    .bg-circle:nth-child(3) {
+        width: 400px;
+        height: 400px;
+        background: white;
+        opacity: 0.075;
+        position: absolute;
+        border-radius: 50%;
+        margin-left: calc(50% - 200px);
+        margin-top: calc(50% - 200px);
+        animation: bg-an-3 1.8s ease-in infinite;
+        animation-delay: 0.15s;
+    }
+
+    @keyframes bg-an-3 {
+        0% {
+            width: 400px;
+            height: 400px;
+            margin-left: calc(50% - 200px);
+            margin-top: calc(50% - 200px);
+        }
+        87% {
+            width: 0px;
+            height: 0px;
+            margin-left: calc(50%);
+            margin-top: calc(50%);
+        }
+        100% {
+            width: 400px;
+            height: 400px;
+            margin-left: calc(50% - 200px);
+            margin-top: calc(50% - 200px);
+        }
+    }
+
+    .bg-circle:nth-child(4) {
+        width: 466.66667px;
+        height: 466.66667px;
+        background: white;
+        opacity: 0.1;
+        position: absolute;
+        border-radius: 50%;
+        margin-left: calc(50% - 233.33333px);
+        margin-top: calc(50% - 233.33333px);
+        animation: bg-an-4 1.8s ease-in infinite;
+        animation-delay: 0.2s;
+    }
+
+    @keyframes bg-an-4 {
+        0% {
+            width: 466.66667px;
+            height: 466.66667px;
+            margin-left: calc(50% - 233.33333px);
+            margin-top: calc(50% - 233.33333px);
+        }
+        96% {
+            width: 0px;
+            height: 0px;
+            margin-left: calc(50%);
+            margin-top: calc(50%);
+        }
+        100% {
+            width: 466.66667px;
+            height: 466.66667px;
+            margin-left: calc(50% - 233.33333px);
+            margin-top: calc(50% - 233.33333px);
+        }
+    }
+
+    .bg-circle:nth-child(5) {
+        width: 533.33333px;
+        height: 533.33333px;
+        background: white;
+        opacity: 0.125;
+        position: absolute;
+        border-radius: 50%;
+        margin-left: calc(50% - 266.66667px);
+        margin-top: calc(50% - 266.66667px);
+        animation: bg-an-5 1.8s ease-in infinite;
+        animation-delay: 0.25s;
+    }
+
+    @keyframes bg-an-5 {
+        0% {
+            width: 533.33333px;
+            height: 533.33333px;
+            margin-left: calc(50% - 266.66667px);
+            margin-top: calc(50% - 266.66667px);
+        }
+        105% {
+            width: 0px;
+            height: 0px;
+            margin-left: calc(50%);
+            margin-top: calc(50%);
+        }
+        100% {
+            width: 533.33333px;
+            height: 533.33333px;
+            margin-left: calc(50% - 266.66667px);
+            margin-top: calc(50% - 266.66667px);
+        }
+    }
+
+    .bg-circle:nth-child(6) {
+        width: 600px;
+        height: 600px;
+        background: white;
+        opacity: 0.15;
+        position: absolute;
+        border-radius: 50%;
+        margin-left: calc(50% - 300px);
+        margin-top: calc(50% - 300px);
+        animation: bg-an-6 1.8s ease-in infinite;
+        animation-delay: 0.3s;
+    }
+
+    @keyframes bg-an-6 {
+        0% {
+            width: 600px;
+            height: 600px;
+            margin-left: calc(50% - 300px);
+            margin-top: calc(50% - 300px);
+        }
+        114% {
+            width: 0px;
+            height: 0px;
+            margin-left: calc(50%);
+            margin-top: calc(50%);
+        }
+        100% {
+            width: 600px;
+            height: 600px;
+            margin-left: calc(50% - 300px);
+            margin-top: calc(50% - 300px);
+        }
+    }
+
+    .mid-circle {
+        position: absolute;
+        border-radius: 50%;
+        width: 250px;
+        transform: scale(1.3);
+        height: 250px;
+        background: white;
+        margin-left: calc(50% - 250px / 2);
+        margin-top: calc(50% - 250px / 2);
+        animation: mid-a 1.8s ease-out infinite;
+        animation-delay: 1.1s;
+    }
+
+    @keyframes mid-a {
+        0% {
+            transform: scale(1.3);
+        }
+        90% {
+            transform: scale(0.9);
+        }
+        100% {
+            transform: scale(1.3);
+        }
+    }
+
+    .top-l {
+        width: 150px;
+        height: 150px;
+        background: white;
+        border-radius: 50%;
+        margin-left: -10px;
+        margin-top: 0px;
+    }
+
+    .bot-r {
+        width: 150px;
+        height: 150px;
+        background: white;
+        border-radius: 50%;
+        margin-left: 110px;
+        margin-top: -50px;
+    }
+
+    .dp {
+        width: 220px;
+        height: 220px;
+        background: url("https://s3-us-west-2.amazonaws.com/images.hellogiggles.com/uploads/2016/01/27131600/darth-vader-figure.jpg");
+        background-size: 260px;
+        position: absolute;
+        border-radius: 50%;
+        margin-left: calc(50% - 220px / 2);
+        margin-top: calc(50% - 220px / 2);
+        overflow: hidden;
+        animation: dp-a 1.8s ease-out infinite;
+        animation-delay: 1.10s;
+        transform: scale(1.4);
+    }
+
+    @keyframes dp-a {
+        0% {
+            transform: scale(1.4);
+        }
+        90% {
+            transform: scale(0.9);
+        }
+        100% {
+            transform: scale(1.4);
+        }
+
+    }
+
+    #footer {
+        position: fixed;
+        bottom: 15%;
+        width: 100%;
+        color: #ffffff;
+    }
+
+    #center {
+        width: 20%;
+        margin: 0 auto;
+    }
+
+</style>
+<div class='container'>
+    <div class='bg-circle'></div>
+    <div class='bg-circle'></div>
+    <div class='bg-circle'></div>
+    <div class='bg-circle'></div>
+    <div class='mid-circle'>
+        <div class='top-l'></div>
+        <div class='bot-r'></div>
     </div>
-
+    <div class='dp'></div>
+</div>
+<div id="footer">
+    <div id="center">
+        <h4>
+            <% if (typeof data !== 'undefined') { %>
+            <%= data %>
+            <% } else { %>
+            Aradığın sayfa yok :(
+            <% } %>
+        </h4>
+    </div>
+</div>
