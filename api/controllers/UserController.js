@@ -7,6 +7,10 @@
 
 module.exports = {
 
+    index: function(req, res){
+        res.send("ddd");
+    },
+
     'new':function newUserView(req, res) {
         res.view();
     }
